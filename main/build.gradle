@@ -4,7 +4,7 @@ plugins{
 
 sourceSets.main{
     java.srcDirs = [
-        'src/',
+        "src",
         "${compileJava.temporaryDir}/fetched",
         "$buildDir/generated/sources/annotationProcessor/java/main/"
     ]
