@@ -15,7 +15,7 @@ jobs:
         java-version: 17
 
     - name: Set up PATH
-      run: echo "${ANDROID_HOME}/build-tools/30.0.1" >> $GITHUB_PATH
+      run: echo "${ANDROID_HOME}/build-tools/34.0.0" >> $GITHUB_PATH
 
     - name: General information
       run: |
