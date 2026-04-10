@@ -6,7 +6,7 @@ sourceSets.main{
     java.srcDirs = [
         "src",
         "${compileJava.temporaryDir}/fetched",
-        "$buildDir/generated/sources/annotationProcessor/java/main/"
+        "$buildDir/generated/sources/annotationProcessor/java/main"
     ]
 }
 
