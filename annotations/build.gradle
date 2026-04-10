@@ -1,6 +1,6 @@
 sourceSets.main{
-    java.srcDirs = ['src/']
-    resources.srcDirs = ['assets/']
+    java.srcDirs = ["src"]
+    resources.srcDirs = ["assets"]
 }
 
 sourceCompatibility = 8
