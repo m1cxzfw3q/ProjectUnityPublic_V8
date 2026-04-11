@@ -1,5 +1,5 @@
 sourceSets.main{
-    java.srcDirs = ["src"]
+    java.srcDirs = ["src/"]
 }
 
 import arc.files.*
