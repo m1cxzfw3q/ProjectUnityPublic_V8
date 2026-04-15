@@ -642,6 +642,13 @@ public class EntityProcessor extends BaseProcessor{
                     .build()
                 );
 
+                builder.addMethod(
+                    MethodSpec.methodBuilder("statuses").addModifiers(Modifier.PUBLIC)
+                        .returns(Seq.class)
+                        .addStatement("return this.statuses")
+                    .build()
+                );
+
                 definitions.add(new EntityDefinition(packageName + "." + name, builder, def, typeIsBase ? null : baseClass, defComps, defGroups, allFieldSpecs));
             }
         }else if(round == 3){
