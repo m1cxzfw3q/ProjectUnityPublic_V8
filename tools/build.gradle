@@ -26,8 +26,7 @@ dependencies{
         implementation files(usedClasspath)
     }
 
-    implementation "com.github.Anuken.Mindustry:core:$mindustryVersion"
-    implementation "com.github.Anuken.Arc:arc-core:$arcVersion"
+    implementation "Mindustry:core:$mindustryVersion"
 }
 
 task rearchive{

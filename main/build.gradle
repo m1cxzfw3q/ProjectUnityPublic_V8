@@ -14,17 +14,15 @@ sourceCompatibility = 16
 targetCompatibility = 8
 
 dependencies{
-    compileOnly "com.github.Anuken.Mindustry:core:$mindustryVersion"
-    compileOnly "com.github.Anuken.Arc:arc-core:$arcVersion"
+    compileOnly "Anuken:Mindustry:$mindustryVersion"
 
     annotationProcessor project(':annotations')
     compileOnly project(':annotations')
 
-    annotationProcessor "com.github.Anuken.Arc:arc-core:$arcVersion"
-    annotationProcessor "com.github.Anuken.Mindustry:core:$mindustryVersion"
+    annotationProcessor "Anuken:Mindustry:$mindustryVersion"
     annotationProcessor "com.squareup:javapoet:$javapoetVersion"
 
-    annotationProcessor "com.github.Anuken:jabel:$jabelVersion"
+    annotationProcessor "Anuken:jabel:$jabelVersion"
 }
 
 ext{
