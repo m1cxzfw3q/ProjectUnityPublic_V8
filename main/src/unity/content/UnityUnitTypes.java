@@ -1356,7 +1356,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 15f;
                 reload = 7f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
-                shootSound = Sounds.shootScathe;
+                shootSound = Sounds.shootMissile;
 
                 bullet = UnityBullets.basicMissile;
             }}, new Weapon(name + "-launcher"){{
@@ -1367,7 +1367,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 15f;
                 reload = 7f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
-                shootSound = Sounds.shootScathe;
+                shootSound = Sounds.shootMissile;
 
                 bullet = UnityBullets.basicMissile;
             }}, new MortarWeapon(name + "-mortar"){{
@@ -1470,7 +1470,7 @@ public final class UnityUnitTypes{
                     shoot.shots = 12;
                     shoot.shotDelay = 3f;
                     inaccuracy = 5f;
-                    shootSound = Sounds.shootScathe;
+                    shootSound = Sounds.shootMissile;
 
                     bullet = new GuidedMissileBulletType(3f, 20f){{
                         homingPower = 0.09f;
@@ -1503,7 +1503,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 15f;
                 reload = 7f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
-                shootSound = Sounds.shootScathe;
+                shootSound = Sounds.shootMissile;
                 angleCone = 135f;
 
                 bullet = UnityBullets.basicMissile;
