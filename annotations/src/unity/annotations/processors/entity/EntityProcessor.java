@@ -1,6 +1,7 @@
 package unity.annotations.processors.entity;
 
 import arc.func.*;
+import arc.math.WindowedMean;
 import arc.struct.*;
 import arc.struct.ObjectMap.*;
 import arc.util.*;
@@ -639,13 +640,6 @@ public class EntityProcessor extends BaseProcessor{
                     MethodSpec.methodBuilder("create").addModifiers(Modifier.PUBLIC, Modifier.STATIC)
                         .returns(ClassName.get(packageName, name))
                         .addStatement(ann.pooled() ? "return arc.util.pooling.Pools.obtain($L.class, " + name + "::new)" : "return new $L()", name)
-                    .build()
-                );
-
-                builder.addMethod(
-                    MethodSpec.methodBuilder("statuses").addModifiers(Modifier.PUBLIC)
-                        .returns(Seq.class)
-                        .addStatement("return this.statuses")
                     .build()
                 );
 
