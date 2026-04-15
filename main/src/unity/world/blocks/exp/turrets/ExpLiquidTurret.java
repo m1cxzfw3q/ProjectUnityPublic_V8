@@ -24,7 +24,7 @@ public class ExpLiquidTurret extends ExpTurret {
     public ExpLiquidTurret(String name){
         super(name);
         hasLiquids = true;
-        loopSound = Sounds.spray;
+        loopSound = Sounds.loopSpray;
         shootSound = Sounds.none;
         smokeEffect = Fx.none;
         shootEffect = Fx.none;

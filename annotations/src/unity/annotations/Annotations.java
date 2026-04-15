@@ -276,7 +276,7 @@ public class Annotations{
     @Retention(RetentionPolicy.SOURCE)
     public @interface MethodPriority{
         /** @return The priority */
-        int value();
+        float value();
     }
 
     /** Inserts this parameter-less method into another void method */

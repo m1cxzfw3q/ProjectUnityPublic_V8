@@ -199,7 +199,7 @@ public class CrucibleRecipes{
     }
 
     public static class CrucibleRecipe{
-        public RecipeIngredient items[];
+        public RecipeIngredient[] items;
         public CrucibleIngredient output;
         public float minTemp = 0;
         public float speed = 0.1f;

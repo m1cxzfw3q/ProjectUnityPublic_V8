@@ -704,7 +704,7 @@ public class MergeProcessor extends BaseProcessor{
             mbuilder.addCode(procBlock("{" + cbuilder.build() + "}"));
         }else{
             for(ExecutableElement elem : values){
-                int priority = annotation(elem, MethodPriority.class) == null ? 0 : annotation(elem, MethodPriority.class).value();
+                int priority = annotation(elem, MethodPriority.class) == null ? 0 : (int) annotation(elem, MethodPriority.class).value();
                 if(
                     annotation(elem, Override.class) != null &&
                     elem.getReturnType().getKind() == VOID &&

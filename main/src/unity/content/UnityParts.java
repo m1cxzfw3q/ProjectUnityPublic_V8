@@ -130,7 +130,7 @@ public class UnityParts{
                 rotateSpeed = 6f;
                 reload = 60f;
                 ejectEffect = Fx.casing2;
-                shootSound = Sounds.bang;
+                shootSound = Sounds.unitExplode1;
                 shootY = 4f;
                 bullet = new BasicBulletType(7f, 40){{
                     width = 11f;
@@ -159,7 +159,7 @@ public class UnityParts{
                 shoot.shots = 2;
                 shoot.shotDelay = 2f;
                 inaccuracy = 6;
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
                 shootY = 7f;
                 bullet = new ArtilleryBulletType(5f, 50){{
                     width = 15f;
@@ -195,7 +195,7 @@ public class UnityParts{
                 rotate = true;
                 reload = 2f;
                 inaccuracy = 10;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.shootFlame;
                 shootY = 6f;
                 recoilTime = 15f;
                 bullet = new BulletType(3.35f, 12f){{
@@ -226,7 +226,7 @@ public class UnityParts{
                 rotate = true;
                 reload = 22f;
                 inaccuracy = 3;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSpectre;
                 shootY = 5f;
                 bullet = new GrenadeBulletType(){{
                     damage = 5;
@@ -305,7 +305,7 @@ public class UnityParts{
                 reload = 18f;
                 targetInterval = 0f;
                 targetSwitchInterval = 0f;
-                shootSound = Sounds.lasershoot;
+                shootSound = Sounds.shootLaser;
                 shootY = 4f;
                 bullet = new BulletType(){{
                     smokeEffect = Fx.pointHit;
@@ -379,7 +379,7 @@ public class UnityParts{
                 barrels = 1;
                 barrelRecoil = 7f;
                 ejectEffect = Fx.casing3Double;
-                shootSound = Sounds.bang;
+                shootSound = Sounds.unitExplode1;
                 cooldownTime = 120f;
                 shake = 4f;
                 bullet = new BasicBulletType(12f, 1000){{

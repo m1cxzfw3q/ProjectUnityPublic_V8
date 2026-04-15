@@ -127,12 +127,11 @@ public class PayloadArm extends GenericGraphBlock{
         return !(b instanceof ConstructBlock) && !(b instanceof CoreBlock) && b.synthetic();
     }
 
+    public enum ArmState{
+        PICKINGUP, MOVINGTOTARGET, ROTATINGTARGET, DROPPING, MOVINGTOPICKUP
+    }
+
     public class PayloadArmBuild extends GenericGraphBuild{
-
-        enum ArmState{
-            PICKINGUP, MOVINGTOTARGET, ROTATINGTARGET, DROPPING, MOVINGTOPICKUP
-        }
-
         public float progress, progressInterop;
         public float armBaseRotation,armExtend,payloadRotation;
         public float targetArmBaseRotation,targetArmExtend,targetpayloadRotation;
@@ -237,7 +236,7 @@ public class PayloadArm extends GenericGraphBlock{
                 GraphicUtils.selected(poss[2], poss[3],1, Color.orange);
                 float offset = Time.globalTime*0.03f%1.0f;
                 float i1,i2,r,r2,l,l2;
-                for(float i = 0; i<=1;i+=0.1){
+                for(float i = 0; i<=1;i+=0.1f){
                     i1 = Mathf.clamp(i + offset*0.1f);
                     i2 = Mathf.clamp(i + offset*0.1f+0.05f);
                     r = Mathf.lerp(calculatedPositions[0].x,calculatedPositions[1].x,i1);

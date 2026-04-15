@@ -10,6 +10,7 @@ import unity.graphics.UnityShaders.*;
 //yeh this is a slightly modified spritebatch.
 
 public class GroundFluidBatch extends Batch{
+    protected Mesh mesh;
     //xy + color + uv + mix_color
     public static final int VERTEX_SIZE = 2 + 1 + 2 + 1 + 1;
     public static final int SPRITE_SIZE = 4 * VERTEX_SIZE;
@@ -24,6 +25,14 @@ public class GroundFluidBatch extends Batch{
 
     //the current fluid sprite
     int fluidSetting;
+
+    @Override
+    public void dispose() {
+        super.dispose();
+        if (mesh != null) {
+            mesh.dispose();
+        }
+    }
 
     public GroundFluidBatch(int size, BatchedGroundLiquidShader defaultShader){
         // 32767 is max vertex index, so 32767 / 4 vertices per sprite = 8191 sprites max.
@@ -205,8 +214,9 @@ public class GroundFluidBatch extends Batch{
 
     public void rect(TextureRegion region, float x, float y, float w, float h,int fid){
         fluidSetting = fid;
-        setColor(GroundFluidControl.liquidProperties.get(fid-1).shallowColor);
-        setMixColor(GroundFluidControl.liquidProperties.get(fid-1).deepColor);
+
+        colorPacked = GroundFluidControl.liquidProperties.get(fid-1).shallowColor.toFloatBits();
+        mixColorPacked = GroundFluidControl.liquidProperties.get(fid-1).deepColor.toFloatBits();
 
         draw(region, x , y, 0, 0, w, h, 0);
     }

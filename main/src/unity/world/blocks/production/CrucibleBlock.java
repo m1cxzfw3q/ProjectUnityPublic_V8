@@ -47,8 +47,9 @@ public class CrucibleBlock extends GenericGraphBlock{
         }
     }
 
+    protected static final Rand rand = new Rand();
+
     public class CrucibleBuild extends GenericGraphBuild{
-        protected static final Rand rand = new Rand();
         @Override
         public boolean acceptItem(Building source, Item item){
             var crucible = crucibleNode();

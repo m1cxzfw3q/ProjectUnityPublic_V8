@@ -48,7 +48,9 @@ public class UnityMinimapRenderer extends MinimapRenderer{
 
         updatePixel(tile);
     }
-    void updatePixel(Tile tile){
+    @Override
+    public void updatePixel(Tile tile){
+        super.updatePixel(tile);
         int color = colorFor(tile);
         privatePixmap.set(tile.x, privatePixmap.height - 1 - tile.y, color);
 

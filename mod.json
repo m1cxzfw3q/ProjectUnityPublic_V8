@@ -2,7 +2,7 @@
     "name": "unity",
     "displayName": "Project Unity",
     "author": "Avant Team",
-    "description": "A big-collaboration Mindustry mod created by many authors from the Mindustry modding community.",
+    "description": "由许多Mindustry模组社区的作者共同创作的一个大协作Mindustry模组。\n移植+汉化(AI)：[sky[]]114514[white[]]\n编译问题修了好久",
     "version": "0.2-youngcha.3.3",
     "minGameVersion": 154,
     "main": "unity.Unity",

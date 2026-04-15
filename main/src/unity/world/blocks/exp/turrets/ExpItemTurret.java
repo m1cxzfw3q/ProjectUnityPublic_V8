@@ -14,6 +14,7 @@ import mindustry.type.*;
 import mindustry.ui.*;
 import mindustry.world.consumers.*;
 import mindustry.world.meta.*;
+import unity.v8.ItemImage;
 import unity.world.blocks.exp.*;
 
 import static mindustry.Vars.*;

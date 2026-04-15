@@ -13,6 +13,7 @@ import mindustry.type.*;
 import mindustry.world.*;
 import mindustry.world.blocks.*;
 import mindustry.world.blocks.storage.*;
+import unity.gen.UnitySounds;
 
 import static mindustry.Vars.*;
 
@@ -29,7 +30,7 @@ public class MechPad extends Block{
         super(name);
         update = configurable = true;
         hasItems = solid = false;
-        ambientSound = Sounds.respawn;
+        ambientSound = UnitySounds.respawn;
         ambientSoundVolume = 0.08f;
     }
     

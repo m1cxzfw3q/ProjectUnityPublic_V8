@@ -119,7 +119,7 @@ public class GraphNode<T extends Graph>{
     }
 
     //convenience
-    public Block block(){return build.getBuild().block();}
+    public Block block(){return build.getBuild().block;}
     public Building build(){return build.getBuild();}
     public T getGraph(){return connector.first().graph;}
 

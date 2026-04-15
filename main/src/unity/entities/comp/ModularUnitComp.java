@@ -33,7 +33,7 @@ import static unity.util.Utils.getFloat;
 
 @SuppressWarnings("unused")
 @EntityComponent
-abstract class ModularUnitComp implements Unitc, ElevationMovec{
+abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
     @Import
     UnitType type;
     @Import
@@ -199,7 +199,7 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec{
             drag(type.drag);
             this.armor = type.armor;
             hitSize(type.hitSize);
-            hovering(type.hovering);
+            // hovering(type.hovering); In V8, this has been removed.
             if(controller == null) controller(type.createController(self()));
             if(mounts().length != type.weapons.size) setupWeapons(type);
             if(abilities().length != type.abilities.size){

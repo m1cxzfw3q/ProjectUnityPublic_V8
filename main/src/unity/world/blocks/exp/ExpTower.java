@@ -29,7 +29,7 @@ public class ExpTower extends ExpTank {
     public TextureRegion laser, laserEnd;
     public float elevation = -1f;
 
-    public Sound shootSound = Sounds.plasmadrop;
+    public Sound shootSound = Sounds.shootQuad;
     public float shootSoundVolume = 0.05f;
 
     public ExpTower(String name){

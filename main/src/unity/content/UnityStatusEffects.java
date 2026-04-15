@@ -46,11 +46,11 @@ public final class UnityStatusEffects{
             }
 
             @Override
-            public void update(Unit unit, float time){
-                super.update(unit, time);
-                if(Mathf.chanceDelta(0.008f * Mathf.clamp(time / 120f))) unit.damage(unit.maxHealth * 0.125f);
+            public void update(Unit unit, StatusEntry entry){
+                super.update(unit, entry);
+                if(Mathf.chanceDelta(0.008f * Mathf.clamp(entry.time / 120f))) unit.damage(unit.maxHealth * 0.125f);
                 for(int i = 0; i < unit.mounts.length; i++){
-                    float strength = Mathf.clamp(time / 120f);
+                    float strength = Mathf.clamp(entry.time / 120f);
                     WeaponMount temp = unit.mounts[i];
                     if(temp == null) continue;
                     if(Mathf.chanceDelta(0.12f)) temp.reload = Math.min(temp.reload + Time.delta * 1.5f * strength, temp.weapon.reload);

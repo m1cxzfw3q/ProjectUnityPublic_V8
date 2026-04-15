@@ -308,7 +308,7 @@ public class KoruhBlocks {
             craftTime = 200f;
             craftEffect = UnityFx.diriumCraft;
             itemCapacity = 40;
-            ambientSound = Sounds.techloop;
+            ambientSound = Sounds.loopTech;
             ambientSoundVolume = 0.02f;
 
             outputItem = new ItemStack(UnityItems.dirium, 1);
@@ -342,7 +342,7 @@ public class KoruhBlocks {
             drawer = new DrawExp();
             ignoreExp = false;
 
-            ambientSound = Sounds.techloop;
+            ambientSound = Sounds.loopTech;
             ambientSoundVolume = 0.01f;
         }};
 
@@ -538,7 +538,7 @@ public class KoruhBlocks {
         teleunit = new UnitTeleporter("teleunit"){{
             requirements(Category.units, with(Items.lead, 180, Items.titanium, 80, Items.silicon, 90, Items.phaseFabric, 64, UnityItems.dirium, 48));
             size = 3;
-            ambientSound = Sounds.techloop;
+            ambientSound = Sounds.loopTech;
             ambientSoundVolume = 0.02f;
             consumePower(3f);
         }};
@@ -546,7 +546,7 @@ public class KoruhBlocks {
         skillCenter = new SkillCenter("researchskill"){{
             requirements(Category.effect, BuildVisibility.hidden, with(Items.copper, 180, Items.lead, 80, UnityItems.stone, 180, UnityItems.denseAlloy, 48));
             size = 3;
-            ambientSound = Sounds.techloop;
+            ambientSound = Sounds.loopTech;
             ambientSoundVolume = 0.02f;
             consumePower(1f);
 
@@ -562,7 +562,7 @@ public class KoruhBlocks {
             coolantMultiplier = 2f;
             range = 140f;
             targetAir = false;
-            shootSound = Sounds.laser;
+            shootSound = Sounds.shootLancer;
 
             powerUse = 7f;
             shootType = new ExpLaserBulletType(150f, 30f){{
@@ -602,7 +602,7 @@ public class KoruhBlocks {
             shootEffect = ShootFx.laserChargeShoot;
             smokeEffect = Fx.none;
             heatColor = Color.red;
-            shootSound = Sounds.laser;
+            shootSound = Sounds.shootLancer;
 
             shootType = new ExpLaserBulletType(150f, 30f){{
                 status = StatusEffects.shocked;
@@ -695,7 +695,7 @@ public class KoruhBlocks {
             reload = 80f;
             targetAir = true;
             liquidCapacity = 10f;
-            shootSound = Sounds.laser;
+            shootSound = Sounds.shootLancer;
             extinguish = false;
 
             maxLevel = 30;
@@ -725,7 +725,7 @@ public class KoruhBlocks {
 
             shootEffect = ShootFx.laserFractalShoot;
             smokeEffect = Fx.none;
-            shootSound = Sounds.laser;
+            shootSound = Sounds.shootLancer;
 
             heatColor = Color.red;
             fromColor = UnityPal.lancerSap3;
@@ -823,7 +823,7 @@ public class KoruhBlocks {
             smokeEffect = Fx.none;
             heatColor = Color.red;
             fromColor = UnityPal.lancerSap3;
-            shootSound = Sounds.plasmaboom;
+            shootSound = Sounds.explosionNavanax;
             shootType = new ExpLaserBulletType(140f, 20f){{
                 status = StatusEffects.shocked;
                 statusDuration = 3 * 60f;
@@ -907,7 +907,7 @@ public class KoruhBlocks {
             targetAir = true;
             liquidCapacity = 15f;
             shootAmount = 3f;
-            shootSound = Sounds.laser;
+            shootSound = Sounds.shootLancer;
 
             shootType = new GeyserLaserBulletType(185f, 30f){{
                 geyser = new GeyserBulletType(){{
@@ -944,8 +944,8 @@ public class KoruhBlocks {
 
             heatColor = fromColor = Pal.lancerLaser;
             toColor = UnityPal.exp;
-            shootSound = Sounds.laserblast;
-            chargeSound = Sounds.lasercharge;
+            shootSound = Sounds.shootCorvus;
+            chargeSound = Sounds.chargeCorvus;
             shootType = new ExpLaserBlastBulletType(500f, 1200f){{
                 damageInc = 1000f;
                 lengthInc = 150f;
@@ -1037,7 +1037,7 @@ public class KoruhBlocks {
             coolantMultiplier = 2f;
             recoil = 0f;
             shootCone = 5f;
-            shootSound = Sounds.flame;
+            shootSound = Sounds.shootFlame;
             shoot = new ShootSpread();
 
             maxLevel = 10;

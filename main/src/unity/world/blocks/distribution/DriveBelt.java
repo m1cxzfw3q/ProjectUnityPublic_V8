@@ -88,11 +88,11 @@ public class DriveBelt extends GenericGraphBlock{
     public void getPotentialLinks(Tile tile, Team team, Cons<Building> others){
         Boolf<Building> valid =
             other -> other != null && //not null
-            other.tile() != tile &&//not itself
+            other.tile != tile &&//not itself
             other.team == team && //not enemy
             other instanceof DriveBeltBuild dbelt && //is belt
             !graphs.contains(dbelt.connector.getGraph()) &&
-            overlaps(tile.x * tilesize + offset, tile.y * tilesize + offset, other.tile(), maxRange * tilesize) && //in  range
+            overlaps(tile.x * tilesize + offset, tile.y * tilesize + offset, other.tile, maxRange * tilesize) && //in  range
             dbelt.connector.validConnections()<dbelt.connector.maxConnections; //not saturated
 
         if(tile.build instanceof DriveBeltBuild cdbb){
@@ -116,7 +116,7 @@ public class DriveBelt extends GenericGraphBlock{
        }
 
     protected boolean overlaps(Building src, Building other, float range){
-       return overlaps(src.x, src.y, other.tile(), range);
+       return overlaps(src.x, src.y, other.tile, range);
    }
 
     protected boolean overlaps(Tile src, Tile other, float range){
@@ -300,8 +300,8 @@ public class DriveBelt extends GenericGraphBlock{
             Draw.z(Layer.power);
             for(var pt: connector.connections){
                 if(pt!=null &&  pt.other(connector).getNode().build() instanceof DriveBeltBuild db){
-                    if(((DriveBelt)db.block()).maxRange< maxRange || db.id<id){
-                        drawBelt(team, x, y, db.x, db.y, r, wheelSize, ((DriveBelt)db.block()).wheelSize);
+                    if(((DriveBelt)db.block).maxRange< maxRange || db.id<id){
+                        drawBelt(team, x, y, db.x, db.y, r, wheelSize, ((DriveBelt)db.block).wheelSize);
                     }
                 }
             }

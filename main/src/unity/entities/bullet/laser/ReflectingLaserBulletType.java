@@ -173,7 +173,7 @@ public class ReflectingLaserBulletType extends BulletType{
         b.initVel(rotation, 0f);
         b.fdata = length;
         b.data = data;
-        b.drag = 0f;
+        b.type.drag = 0f;
         b.hitSize = hitSize;
         b.damage = s.damage * reflectLoss;
         b.add();

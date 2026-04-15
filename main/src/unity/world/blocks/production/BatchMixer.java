@@ -86,7 +86,7 @@ public class BatchMixer extends GenericGraphCrafter{
         public void displayBars(Table table){
             super.displayBars(table);
             table.row();
-            table.add(new Bar(() -> Core.bundle.format("bar.unity-craftspeed", Strings.fixed(efficiency()*100f, 1))+"%", () -> Pal.ammo, () -> Mathf.clamp(efficiency())));
+            table.add(new Bar(() -> Core.bundle.format("bar.unity-craftspeed", Strings.fixed(efficiency*100f, 1))+"%", () -> Pal.ammo, () -> Mathf.clamp(efficiency)));
         }
 
         @Override

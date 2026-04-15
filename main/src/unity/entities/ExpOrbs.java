@@ -123,7 +123,7 @@ public class ExpOrbs{
 
         @Override
         public void update(Bullet b){
-            if(b.moving()) b.time(0f);
+            if(!b.vel.isZero(0.01F)) b.time(0f);
 
             Tile tile = world.tileWorld(b.x, b.y);
             if(tile == null || tile.build == null) return;

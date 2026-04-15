@@ -46,7 +46,7 @@ public class ExpTurret extends Turret {
     public float orbScale = 0.8f;
     public int expScale = -1;
     public Effect upgradeEffect = UnityFx.expPoof, upgradeBlockEffect = UnityFx.expShineRegion;
-    public Sound upgradeSound = Sounds.message;
+    public Sound upgradeSound = Sounds.uiNotify;
     public Color fromColor = Pal.lancerLaser, toColor = UnityPal.exp;
     public Color[] effectColors;
 

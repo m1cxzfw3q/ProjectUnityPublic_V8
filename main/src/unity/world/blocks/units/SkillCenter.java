@@ -47,7 +47,7 @@ public class SkillCenter extends ExpTank {
 
         @Override
         public void updateTile(){
-            heat = Mathf.lerp(heat, efficiency(), 0.05f);
+            heat = Mathf.lerp(heat, efficiency, 0.05f);
             time += heat * Time.delta;
         }
 

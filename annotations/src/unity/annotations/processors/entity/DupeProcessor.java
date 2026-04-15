@@ -408,7 +408,7 @@ public class DupeProcessor extends BaseProcessor{
         boolean firstc = true;
         boolean superCalled = false;
         for(ExecutableElement elem : values){
-            int priority = annotation(elem, MethodPriority.class) == null ? 0 : annotation(elem, MethodPriority.class).value();
+            int priority = annotation(elem, MethodPriority.class) == null ? 0 : (int) annotation(elem, MethodPriority.class).value();
             //pre-super() addition
             /*
             if(

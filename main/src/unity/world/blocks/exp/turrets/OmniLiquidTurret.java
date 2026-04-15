@@ -33,7 +33,7 @@ public class OmniLiquidTurret extends ExpTurret {
     public OmniLiquidTurret(String name){
         super(name);
         hasLiquids = true;
-        loopSound = Sounds.spray;
+        loopSound = Sounds.loopSpray;
         shootSound = Sounds.none;
         smokeEffect = Fx.none;
         shootEffect = Fx.none;

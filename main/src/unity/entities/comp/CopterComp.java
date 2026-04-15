@@ -17,7 +17,7 @@ import static mindustry.Vars.*;
  */
 @SuppressWarnings("unused")
 @EntityComponent
-abstract class CopterComp implements Unitc{
+abstract class CopterComp implements Unitc, Posc{
     transient RotorMount[] rotors;
     transient float rotorSpeedScl = 1f;
 

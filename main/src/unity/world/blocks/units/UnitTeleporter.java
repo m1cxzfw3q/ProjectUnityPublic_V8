@@ -36,8 +36,8 @@ public class UnitTeleporter extends Block {
     public Effect teleportIn = UnityFx.tpIn;
     public Effect teleportOut = UnityFx.tpOut;
     public Effect teleportUnit = UnityFx.tpFlash;
-    public Sound inSound = Sounds.plasmadrop;
-    public Sound outSound = Sounds.lasercharge2;
+    public Sound inSound = Sounds.shootQuad;
+    public Sound outSound = Sounds.chargeVela;
 
     public UnitTeleporter(String name){
         super(name);

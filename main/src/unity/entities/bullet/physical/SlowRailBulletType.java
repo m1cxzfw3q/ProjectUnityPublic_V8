@@ -20,7 +20,7 @@ public class SlowRailBulletType extends BasicBulletType{
 
     public SlowRailBulletType(float speed, float damage){
         super(speed, damage);
-        collides = collidesTiles = backMove = reflectable = false;
+        collides = collidesTiles = reflectable = false;
         pierce = pierceBuilding = true;
         trailEffect = TrailFx.coloredRailgunTrail;
     }

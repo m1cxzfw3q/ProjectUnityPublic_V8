@@ -1,6 +1,7 @@
 package unity.world.blocks.exp;
 
 import arc.*;
+import arc.func.Cons;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.math.*;
@@ -117,7 +118,7 @@ public class ClassicProjector extends ExpForceProjector {
 
             phaseHeat = Mathf.lerpDelta(phaseHeat, Mathf.num(phaseValid), 0.1f);
 
-            if(phaseValid && !broken && timer(timerUse, phaseUseTime) && efficiency() > 0){
+            if(phaseValid && !broken && timer(timerUse, phaseUseTime) && efficiency > 0){
                 consume();
             }
 
@@ -127,7 +128,7 @@ public class ClassicProjector extends ExpForceProjector {
                 Fx.reactorsmoke.at(x + Mathf.range(tilesize / 2f), y + Mathf.range(tilesize / 2f));
             }
 
-            warmup = Mathf.lerpDelta(warmup, efficiency(), 0.1f);
+            warmup = Mathf.lerpDelta(warmup, efficiency, 0.1f);
 
             if(buildup > 0){
                 float scale = !broken ? cooldownNormal : cooldownBrokenBase;
@@ -159,7 +160,7 @@ public class ClassicProjector extends ExpForceProjector {
             float realRadius = realRadius();
 
             if(realRadius > 0 && !broken){
-                Groups.bullet.intersect(x - realRadius, y - realRadius, realRadius * 2f, realRadius * 2f, b -> hitBullet(b, realRadius));
+                Groups.bullet.intersect(x - realRadius, y - realRadius, realRadius * 2f, realRadius * 2f, (Cons<? super Bullet>) b -> hitBullet(b, realRadius));
             }
         }
 

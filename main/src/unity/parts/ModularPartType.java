@@ -17,6 +17,7 @@ import unity.parts.stat.*;
 import unity.parts.stat.AdditiveStat.*;
 import unity.ui.*;
 import unity.util.*;
+import unity.v8.ItemDisplay;
 import unity.world.blocks.payloads.*;
 
 import javax.swing.text.html.parser.*;

@@ -84,7 +84,7 @@ public final class UnityUnitTypes{
                 x = 5.25f;
                 y = 6.5f;
                 shootY = 1.5f;
-                shootSound = Sounds.pew;
+                shootSound = Sounds.shoot;
                 ejectEffect = Fx.casing1;
 
                 bullet = new BasicBulletType(5f, 7f){{
@@ -98,7 +98,7 @@ public final class UnityUnitTypes{
                 x = 4.5f;
                 y = 0.5f;
                 shootY = 2.25f;
-                shootSound = Sounds.shootSnap;
+                shootSound = Sounds.shootScatter;
                 ejectEffect = Fx.casing2;
 
                 bullet = new MissileBulletType(3f, 1f){{
@@ -139,7 +139,7 @@ public final class UnityUnitTypes{
                 y = 11f;
                 shootX = -0.75f;
                 shootY = 3f;
-                shootSound = Sounds.pew;
+                shootSound = Sounds.shoot;
                 ejectEffect = Fx.casing1;
                 reload = 8f;
 
@@ -153,7 +153,7 @@ public final class UnityUnitTypes{
                 y = 8.75f;
                 shootX = -0.75f;
                 shootY = 3f;
-                shootSound = Sounds.shootSnap;
+                shootSound = Sounds.shootScatter;
                 ejectEffect = Fx.casing1;
                 reload = 12f;
 
@@ -169,7 +169,7 @@ public final class UnityUnitTypes{
                 y = 5.75f;
                 shootX = -0.5f;
                 shootY = 2f;
-                shootSound = Sounds.shootSnap;
+                shootSound = Sounds.shootScatter;
                 ejectEffect = Fx.casing1;
                 reload = 30f;
 
@@ -228,7 +228,7 @@ public final class UnityUnitTypes{
                 shootX = -1f;
                 shootY = 2.75f;
                 reload = 15;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSpectre;
 
                 bullet = new BasicBulletType(6f, 60f){{
                     lifetime = 30f;
@@ -243,7 +243,7 @@ public final class UnityUnitTypes{
                 shootY = 5.25f;
                 reload = 30f;
                 shoot.shots = 3;
-                shootSound = Sounds.spark;
+                shootSound = Sounds.shootArc;
 
                 bullet = new LightningBulletType(){{
                     damage = 15f;
@@ -296,7 +296,7 @@ public final class UnityUnitTypes{
                 shootX = -1f;
                 shootY = 7.25f;
                 reload = 12f;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSpectre;
 
                 bullet = new BasicBulletType(6f, 60f){{
                     lifetime = 30f;
@@ -315,7 +315,7 @@ public final class UnityUnitTypes{
                 reload = 20f;
                 shoot.shots = 4;
                 shoot.shotDelay = 2f;
-                shootSound = Sounds.shootSnap;
+                shootSound = Sounds.shootScatter;
 
                 bullet = new BasicBulletType(4f, 29, "bullet"){{
                     width = 10f;
@@ -330,7 +330,7 @@ public final class UnityUnitTypes{
                 y = 15.5f;
                 shootY = 4.5f;
                 reload = 60f;
-                shootSound = Sounds.laser;
+                shootSound = Sounds.shootLancer;
 
                 bullet = new LaserBulletType(240f){{
                     sideAngle = 45f;
@@ -374,7 +374,7 @@ public final class UnityUnitTypes{
                 x = 14f;
                 y = 27f;
                 shootY = 5.5f;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSpectre;
                 ejectEffect = Fx.casing3Double;
                 reload = 10f;
 
@@ -389,7 +389,7 @@ public final class UnityUnitTypes{
                 x = 17f;
                 y = 14f;
                 shootY = 5.75f;
-                shootSound = Sounds.shootSnap;
+                shootSound = Sounds.shootScatter;
                 ejectEffect = Fx.casing2;
 
                 shoot = new ShootSpread(2, 2f);
@@ -414,7 +414,7 @@ public final class UnityUnitTypes{
                 x = 8f;
                 y = 3f;
                 shootY = 6.75f;
-                shootSound = Sounds.shotgun;
+                shootSound = Sounds.shootFuse;
                 ejectEffect = Fx.none;
 
                 shoot = new ShootSpread(3, 15f);
@@ -474,7 +474,7 @@ public final class UnityUnitTypes{
                 recoil = 7f;
                 shake = 3f;
                 ejectEffect = Fx.casing4;
-                shootSound = Sounds.railgun;
+                shootSound = Sounds.shootForeshadow;
 
                 bullet = new SlowRailBulletType(25f, 250f){{
                     lifetime = 13f;
@@ -498,7 +498,7 @@ public final class UnityUnitTypes{
                 shootY = 5.5f;
                 reload = 5f;
                 recoil = 0.5f;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.shootFlame;
                 angleCone = 80f;
                 rotate = true;
 
@@ -509,7 +509,7 @@ public final class UnityUnitTypes{
                 shootY = 5.5f;
                 reload = 4f;
                 recoil = 0.5f;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.shootFlame;
                 angleCone = 80f;
                 rotate = true;
 
@@ -547,7 +547,7 @@ public final class UnityUnitTypes{
                 angleCone = 20f;
                 angleOffset = -15f;
                 shootCone = 20f;
-                shootSound = Sounds.flame;
+                shootSound = Sounds.shootFlame;
                 cooldownTime = 180f;
 
                 bullet = new FlameBulletType(6.6f, 75f){{
@@ -576,7 +576,7 @@ public final class UnityUnitTypes{
                 angleCone = 60f;
                 reload = 60f;
                 shootCone = 30f;
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootScathe;
 
                 bullet = new MissileBulletType(2.5f, 22f){{
                     lifetime = 40f;
@@ -620,7 +620,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 10f;
                 shoot.shots = 8;
                 velocityRnd = 0.2f;
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
                 reload = 40f;
 
                 bullet = new ArtilleryBulletType(3f, 15, "shell"){{
@@ -663,7 +663,7 @@ public final class UnityUnitTypes{
                 mirror = false;
                 reload = 4f * 60f;
                 recoil = 0f;
-                shootSound = Sounds.lasershoot;
+                shootSound = Sounds.shootLaser;
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 80f;
                 shoot.firstShotDelay = ChargeFx.greenLaserChargeParent.lifetime;
@@ -745,7 +745,7 @@ public final class UnityUnitTypes{
                 y = 0f;
                 shootY = 16.75f;
                 reload = 12f * 60f;
-                shootSound = Sounds.beam;
+                shootSound = Sounds.beamMeltdown;
                 shoot.firstShotDelay = ChargeFx.sagittariusCharge.lifetime;
                 shootStatus = UnityStatusEffects.sagittariusFatigue;
                 shootStatusDuration = 10f * 60f + ChargeFx.sagittariusCharge.lifetime;
@@ -837,7 +837,7 @@ public final class UnityUnitTypes{
                 rotate = true;
                 shadow = 15f;
                 shoot = new ShootSpread(3, 15f);
-                shootSound = Sounds.laser;
+                shootSound = Sounds.shootLaser;
 
                 bullet = new LaserBulletType(80f){{
                     colors = new Color[]{Pal.sapBulletBack.cpy().a(0.4f), Pal.sapBullet, Color.white};
@@ -865,7 +865,7 @@ public final class UnityUnitTypes{
                 recoil = 3f;
                 rotateSpeed = 1f;
                 ejectEffect = Fx.none;
-                shootSound = Sounds.railgun;
+                shootSound = Sounds.shootForeshadow;
                 rotate = true;
                 shadow = 40f;
                 barrelSpacing = 11.25f;
@@ -946,7 +946,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 25f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
                 shoot.shots = 2;
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootScathe;
 
                 bullet = new MissileBulletType(3.7f, 15f){{
                     width = 10f;
@@ -990,7 +990,7 @@ public final class UnityUnitTypes{
                 x = 20.5f;
                 y = -10f;
                 shootY = 20.5f - 4f;
-                shootSound = Sounds.railgun;
+                shootSound = Sounds.shootForeshadow;
                 rotate = true;
                 alternate = true;
                 rotateSpeed = 0.9f;
@@ -1063,7 +1063,7 @@ public final class UnityUnitTypes{
                 recoil = 0f;
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 180f;
-                shootSound = Sounds.beam;
+                shootSound = Sounds.beamMeltdown;
 
                 bullet = new AcceleratingLaserBulletType(230f){{
                     lifetime = 180f;
@@ -1090,7 +1090,7 @@ public final class UnityUnitTypes{
                 shoot.shotDelay = 4f;
                 rotateSpeed = 3f;
                 shadow = 22f;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSpectre;
 
                 bullet = b;
             }}, new Weapon(name + "-mount"){{
@@ -1105,7 +1105,7 @@ public final class UnityUnitTypes{
                 shoot.shotDelay = 4f;
                 rotateSpeed = 3f;
                 shadow = 22f;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSpectre;
 
                 bullet = b;
             }});
@@ -1169,7 +1169,7 @@ public final class UnityUnitTypes{
                 continuous = true;
                 recoil = 0f;
                 cooldownTime = 6f * 60f;
-                shootSound = Sounds.beam;
+                shootSound = Sounds.beamMeltdown;
 
                 bullet = new AcceleratingLaserBulletType(320f){{
                     lifetime = 4f * 60f;
@@ -1201,7 +1201,7 @@ public final class UnityUnitTypes{
                 reload = 2f;
                 xRand = 3f; //TODO use something else instead? -Anuke
                 inaccuracy = 4f;
-                shootSound = Sounds.shootBig;
+                shootSound = Sounds.shootSpectre;
 
                 bullet = b;
             }});
@@ -1242,7 +1242,7 @@ public final class UnityUnitTypes{
                 continuous = rotate = true;
                 mirror = false;
                 rotateSpeed = 1.5f;
-                shootSound = Sounds.tractorbeam;
+                shootSound = Sounds.beamParallax;
 
                 bullet = new HealingConeBulletType(3f){{
                     healPercent = 6f;
@@ -1287,7 +1287,7 @@ public final class UnityUnitTypes{
                 continuous = rotate = true;
                 alternate = false;
                 rotateSpeed = 3.5f;
-                shootSound = Sounds.tractorbeam;
+                shootSound = Sounds.beamParallax;
 
                 bullet = new HealingConeBulletType(3f){{
                     healPercent = 3f;
@@ -1356,7 +1356,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 15f;
                 reload = 7f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootScathe;
 
                 bullet = UnityBullets.basicMissile;
             }}, new Weapon(name + "-launcher"){{
@@ -1367,7 +1367,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 15f;
                 reload = 7f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootScathe;
 
                 bullet = UnityBullets.basicMissile;
             }}, new MortarWeapon(name + "-mortar"){{
@@ -1382,7 +1382,7 @@ public final class UnityUnitTypes{
                 velocityRnd = 0.1f;
                 reload = 60f * 2f;
                 recoil = 2f;
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
 
                 bullet = new MortarBulletType(7f, 4f){{
                     width = height = 22f;
@@ -1441,7 +1441,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 5f;
                 shootCone = 15f;
                 rotate = true;
-                shootSound = Sounds.artillery;
+                shootSound = Sounds.shootArtillery;
                 reload = 25f;
 
                 bullet = new BasicBulletType(8f, 80, "bullet"){{
@@ -1470,7 +1470,7 @@ public final class UnityUnitTypes{
                     shoot.shots = 12;
                     shoot.shotDelay = 3f;
                     inaccuracy = 5f;
-                    shootSound = Sounds.missile;
+                    shootSound = Sounds.shootScathe;
 
                     bullet = new GuidedMissileBulletType(3f, 20f){{
                         homingPower = 0.09f;
@@ -1503,7 +1503,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 15f;
                 reload = 7f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
-                shootSound = Sounds.missile;
+                shootSound = Sounds.shootScathe;
                 angleCone = 135f;
 
                 bullet = UnityBullets.basicMissile;
@@ -1548,7 +1548,7 @@ public final class UnityUnitTypes{
                 rotateSpeed = 0.7f;
                 shadow = 46f;
                 reload = 60f * 2.5f;
-                shootSound = Sounds.railgun;
+                shootSound = Sounds.shootForeshadow;
 
                 bullet = new SlowRailBulletType(70f, 2100f){{
                     lifetime = 10f;

@@ -1,3 +1,5 @@
+apply plugin: 'java-library'
+
 sourceSets.main{
     java.srcDirs = ["src/"]
     resources.srcDirs = ["assets/"]
@@ -6,10 +8,10 @@ sourceSets.main{
 sourceCompatibility = 8
 targetCompatibility = 8
 
-dependencies{
-    implementation "com.github.Anuken.Arc:arc-core:$mindustryVersion"
-    implementation "com.github.Anuken.Mindustry:core:$mindustryVersion"
-    implementation "com.squareup:javapoet:$javapoetVersion"
+dependencies {
+    api "com.github.Anuken.Arc:arc-core:$mindustryVersion"
+    api "com.github.Anuken.Mindustry:core:$mindustryVersion"
+    api "com.squareup:javapoet:$javapoetVersion"
 }
 
 tasks.withType(JavaCompile){

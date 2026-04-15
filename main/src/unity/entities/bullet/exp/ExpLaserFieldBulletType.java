@@ -41,8 +41,8 @@ public class ExpLaserFieldBulletType extends ExpLaserBulletType{
 
         if(!(b.data instanceof Healthc)) smallDistField.create(b.owner, b.team, vec.getX(), vec.getY(), 0f); //if b.data is instanceof healthc, handleExp is called
 
-        Sounds.spark.at(vec.getX(), vec.getY(),0.4f);
-        Sounds.spray.at(vec.getX(), vec.getY(),0.4f);
+        Sounds.shootArc.at(vec.getX(), vec.getY(),0.4f);
+        Sounds.shootArc.at(vec.getX(), vec.getY(),0.4f);
         UnityFx.chainLightning.at(b.x, b.y, 0, getColor(b), vec);
 
         for(int i = 0; i < getFields(b); i++) {
@@ -52,8 +52,8 @@ public class ExpLaserFieldBulletType extends ExpLaserBulletType{
                 float tx = vec.getX() + Mathf.range(8) * Vars.tilesize;
                 float ty = vec.getY() + Mathf.range(8) * Vars.tilesize;
                 UnityFx.smallChainLightning.at(vec.getX(), vec.getY(), 0, getColor(b), new Vec2(tx, ty));
-                Sounds.spark.at(tx, ty,0.4f);
-                Sounds.spray.at(tx, ty,0.4f);
+                Sounds.shootArc.at(tx, ty,0.4f);
+                Sounds.shootArc.at(tx, ty,0.4f);
                 smallDistField.create(owner, team, tx, ty, 0f);
             });
         }

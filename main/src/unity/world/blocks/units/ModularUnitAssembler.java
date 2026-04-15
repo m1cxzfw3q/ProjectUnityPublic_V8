@@ -23,6 +23,7 @@ import unity.parts.types.*;
 import unity.type.*;
 import unity.ui.*;
 import unity.util.*;
+import unity.v8.ItemDisplay;
 
 import static mindustry.Vars.content;
 import static unity.parts.ModularPartType.*;

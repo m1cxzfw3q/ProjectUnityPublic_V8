@@ -20,6 +20,7 @@ import mindustry.ui.*;
 import mindustry.ui.dialogs.*;
 import mindustry.world.meta.*;
 import unity.parts.*;
+import unity.v8.ItemDisplay;
 
 import java.util.*;
 
