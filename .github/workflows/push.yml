@@ -45,9 +45,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run:
-        hub release create -m "Project Unity" "${{ steps.tag_make.outputs.tag }}"
+        github release create -m "Project Unity" "${{ steps.tag_make.outputs.tag }}"
         
-    
+
     - name: Add jar Release
       uses: softprops/action-gh-release@v1
       if: github.ref == 'refs/heads/master'
