@@ -1,7 +1,6 @@
 package unity.annotations.processors.entity;
 
 import arc.func.*;
-import arc.math.WindowedMean;
 import arc.struct.*;
 import arc.struct.ObjectMap.*;
 import arc.util.*;
