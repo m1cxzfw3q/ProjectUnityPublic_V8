@@ -21,7 +21,7 @@ const float epsilon = 0.002;
 
 uniform vec2 u_viewportInverse;
 
-float round(float a){
+float roundPU(float a){
     return floor(a + 0.5);
 }
 
@@ -35,7 +35,7 @@ void main(){
     v_ts = 1.0/float(u_sprites_width);
     v_ty = float(int(a_fluidType*2.0)/u_sprites_width)*v_ts+epsilon;
     v_tx = mod(a_fluidType*2.0,float(u_sprites_width))*v_ts+epsilon;
-    v_ty2 = float(floor(round(a_fluidType*2.0+1.0)/float(u_sprites_width)))*v_ts+epsilon;
+    v_ty2 = float(floor(roundPU(a_fluidType*2.0+1.0)/float(u_sprites_width)))*v_ts+epsilon;
     v_tx2 = mod(a_fluidType*2.0+1.0,float(u_sprites_width))*v_ts+epsilon;
     v_ts-=epsilon*2.0;
 
