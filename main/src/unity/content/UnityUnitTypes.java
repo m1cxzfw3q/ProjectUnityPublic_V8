@@ -576,7 +576,7 @@ public final class UnityUnitTypes{
                 angleCone = 60f;
                 reload = 60f;
                 shootCone = 30f;
-                shootSound = Sounds.shootScathe;
+                shootSound = Sounds.shootMissileLarge;
 
                 bullet = new MissileBulletType(2.5f, 22f){{
                     lifetime = 40f;
@@ -663,7 +663,8 @@ public final class UnityUnitTypes{
                 mirror = false;
                 reload = 4f * 60f;
                 recoil = 0f;
-                shootSound = Sounds.shootLaser;
+                shootSound = Sounds.shootCorvus;
+                chargeSound = Sounds.chargeCorvus;
                 shootStatus = StatusEffects.slow;
                 shootStatusDuration = 80f;
                 shoot.firstShotDelay = ChargeFx.greenLaserChargeParent.lifetime;
@@ -946,7 +947,7 @@ public final class UnityUnitTypes{
                 inaccuracy = 25f;
                 xRand = 2.25f; //TODO use something else instead? -Anuke
                 shoot.shots = 2;
-                shootSound = Sounds.shootScathe;
+                shootSound = Sounds.shootMissileLarge;
 
                 bullet = new MissileBulletType(3.7f, 15f){{
                     width = 10f;

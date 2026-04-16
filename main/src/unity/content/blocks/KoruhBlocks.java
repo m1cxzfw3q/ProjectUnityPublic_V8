@@ -935,6 +935,7 @@ public class KoruhBlocks {
             reload = 500f;
 
             shoot.firstShotDelay = 100f;
+            moveWhileCharging = false;
             recoil = 5f;
             powerUse = 17f;
 
