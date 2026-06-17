@@ -15,7 +15,6 @@ import mindustry.entities.units.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
-import mindustry.type.ammo.*;
 import mindustry.world.meta.*;
 import unity.ai.*;
 import unity.annotations.Annotations.*;
@@ -654,7 +653,6 @@ public final class UnityUnitTypes{
             hovering = true;
             shadowElevation = 0.23f;
             allowLegStep = true;
-            ammoType = new PowerAmmoType(2000);
             groundLayer = Layer.legUnit;
 
             weapons.add(new Weapon(){{
@@ -734,7 +732,6 @@ public final class UnityUnitTypes{
             hovering = true;
             shadowElevation = 0.23f;
             allowLegStep = true;
-            ammoType = new PowerAmmoType(2000);
             groundLayer = Layer.legUnit;
             drawShields = false;
 
