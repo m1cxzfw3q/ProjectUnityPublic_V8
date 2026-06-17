@@ -36,3 +36,9 @@ You can contribute to development by
    ```
 
 Resulting `.jar` file should be in `main/build/libs/`
+
+## NOTE
+
+1. ProjectUnity has stopped updating; both the public version and the internal ones are.
+
+   Stop harboring any hope for this module that has already died.
