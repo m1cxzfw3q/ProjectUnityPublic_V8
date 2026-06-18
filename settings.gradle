@@ -6,4 +6,4 @@ include ':annotations'
 include ':main'
 include ':tools'
 
-rootProject.name = 'Project Unity Aggregate'
+rootProject.name = 'Project Unity'
