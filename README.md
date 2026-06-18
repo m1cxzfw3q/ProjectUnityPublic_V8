@@ -22,7 +22,7 @@ You can contribute to development by
 
 1. Clone repository.
    ```
-   git clone -b main --single-branch https://github.com/m1cxzfw3q/ProjectUnityV8_Aggregate
+   git clone -b Youngcha-part-2 --single-branch https://github.com/AvantTeam/ProjectUnityPublic
    ```
 
 2. Pack sprites. (Only necessary if new sprites are added)
