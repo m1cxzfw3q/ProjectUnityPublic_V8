@@ -249,7 +249,7 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
             });
         }
         if(construct != null && elevation<0.01){
-            steerAngle *= 0.98;
+            steerAngle *= 0.98f;
         }
         moving = false;
         if(maxHealth!=statHp){
@@ -331,8 +331,8 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
             }
         }
         if(isZero){
-            rotateVel*=0.8;
-            steerAngle*=0.8;
+            rotateVel*=0.8f;
+            steerAngle*=0.8f;
         }else{
             steerAngle =  steerAngle(rotation,vecangle);
         }

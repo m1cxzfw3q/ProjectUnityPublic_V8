@@ -58,7 +58,7 @@ public class ExpTower extends ExpTank {
     public void setStats(){
         super.setStats();
         if(buffer){
-            stats.add(Stat.output, "@ [lightgray]@[]", Core.bundle.format("explib.expAmount", (bufferExp / manualReload) * 60), StatUnit.perSecond.localized());
+            stats.add(Stat.output, "@ [lightgray]@[]", Core.bundle.format("exp.expAmount", (bufferExp / manualReload) * 60), StatUnit.perSecond.localized());
         }
     }
 

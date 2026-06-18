@@ -1,5 +1,6 @@
 package unity.world.blocks.exp;
 
+import arc.Core;
 import arc.math.*;
 import arc.util.*;
 import arc.util.io.*;
@@ -25,7 +26,7 @@ public class ExpRouter extends Junction {
     @Override
     public void setStats(){
         super.setStats();
-        stats.add(Stat.speed, "stat.unity.exppersec", 60f / reloadTime);
+        stats.add(Stat.speed, Core.bundle.format("stat.unity.exppersec", 60f / reloadTime));
     }
 
     public class ExpRouterBuild extends JunctionBuild implements ExpHolder{
