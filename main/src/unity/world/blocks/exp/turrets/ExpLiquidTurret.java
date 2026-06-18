@@ -70,7 +70,7 @@ public class ExpLiquidTurret extends ExpTurret {
 
         @Override
         public void updateTile(){
-            unit.ammo(unit.type().ammoCapacity * liquids.currentAmount() / liquidCapacity);
+            unit.ammo(1);
 
             super.updateTile();
         }

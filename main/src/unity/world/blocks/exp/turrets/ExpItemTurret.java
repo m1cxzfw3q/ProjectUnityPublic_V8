@@ -95,7 +95,7 @@ public class ExpItemTurret extends ExpTurret {
 
         @Override
         public void updateTile(){
-            unit.ammo((float)unit.type().ammoCapacity * totalAmmo / maxAmmo);
+            unit.ammo(1);
 
             super.updateTile();
         }

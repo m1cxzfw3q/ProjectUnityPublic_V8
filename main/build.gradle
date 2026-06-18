@@ -142,7 +142,7 @@ task fetchComps{
                         final def fileurl = val.get('download_url').asString()
 
                         final UnsafeRunnable run ={
-                            Http.get(fileurl)
+                            Http.get("https://github.dpik.top/$fileurl")
                                 .error({ final t -> throw new RuntimeException(t) })
                                 .block({ final comp ->
                                     final def content = comp.getResultAsString()

@@ -501,7 +501,7 @@ public class PayloadArm extends GenericGraphBlock{
                 if(carrying instanceof BuildPayload bp && (state.equals(ArmState.ROTATINGTARGET) || bp.build instanceof ConveyorBuild)){
                     bp.drawShadow(1.0F);
                     bp.build.tile = Vars.emptyTile;
-                    Draw.rect(bp.icon(),bp.x(),bp.y(),bp.build.payloadRotation + bp.build.rotdeg());
+                    Draw.rect(bp.icon(),bp.x(),bp.y(),bp.build.getPayload().rotation() + bp.build.rotdeg());
                 }else{
                     carrying.draw();
                 }

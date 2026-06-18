@@ -32,7 +32,7 @@ public class ExpPowerTurret extends ExpTurret {
 
         @Override
         public void updateTile(){
-            unit.ammo(power.status * unit.type().ammoCapacity);
+            unit.ammo(1);
 
             super.updateTile();
         }

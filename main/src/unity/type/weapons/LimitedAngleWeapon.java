@@ -120,7 +120,6 @@ public class LimitedAngleWeapon extends Weapon{
 
         if(mount.shoot &&
         can &&
-        (!useAmmo || unit.ammo > 0 || !state.rules.unitAmmo || unit.team.rules().infiniteAmmo) && //check ammo
         (!alternate || mount.side == flipSprite) &&
         (unit.vel.len() >= mount.weapon.minShootVelocity || (net.active() && !unit.isLocal())) && //check velocity requirements
         mount.reload <= 0.0001f &&
@@ -129,11 +128,6 @@ public class LimitedAngleWeapon extends Weapon{
             shoot(unit, mount, bulletX, bulletY, shootAngle);
 
             mount.reload = reload;
-
-            if(useAmmo){
-                unit.ammo--;
-                if(unit.ammo < 0) unit.ammo = 0;
-            }
         }
     }
 
