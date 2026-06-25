@@ -75,6 +75,10 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
 
     public transient float statHp = 0;
 
+    @Import Seq<StatusEntry> statuses;
+    public Seq<StatusEntry> statuses() {
+        return statuses;
+    }
 
     @Override
     public void add(){

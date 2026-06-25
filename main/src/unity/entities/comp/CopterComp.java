@@ -1,7 +1,9 @@
 package unity.entities.comp;
 
 import arc.math.*;
+import arc.struct.Seq;
 import arc.util.*;
+import mindustry.entities.units.StatusEntry;
 import mindustry.gen.*;
 import mindustry.type.*;
 import unity.annotations.Annotations.*;
@@ -25,6 +27,11 @@ abstract class CopterComp implements Unitc, Posc{
     @Import boolean dead;
     @Import float health, rotation;
     @Import int id;
+
+    @Import Seq<StatusEntry> statuses;
+    public Seq<StatusEntry> statuses() {
+        return statuses;
+    }
 
     @Override
     public void add(){
