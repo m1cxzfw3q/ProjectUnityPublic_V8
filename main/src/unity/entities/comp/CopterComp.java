@@ -42,9 +42,7 @@ abstract class CopterComp implements Unitc, Posc{
                 try{
                     Class<?> event = ReflectUtils.findClass("mindustryX.events.HealthChangedEvent");
                     Reflect.invoke(event, "fire", Seq.with(this, delta).toArray(), Healthc.class, float.class);
-                } catch (Exception e) {
-                    Log.info(e);
-                }
+                } catch (Exception ignored) {}
             }
         }
 
