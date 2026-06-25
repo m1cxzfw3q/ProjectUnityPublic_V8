@@ -28,6 +28,11 @@ abstract class CopterComp implements Unitc, Posc{
     @Import float health, rotation;
     @Import int id;
 
+    @Import float shield;
+    protected transient float lastHealth;
+    protected transient float lastHealthChanged;
+    protected transient float lastShield;
+
     //MDTX
     @Import Seq<StatusEntry> statuses;
     public Seq<StatusEntry> statuses() {
@@ -54,6 +59,7 @@ abstract class CopterComp implements Unitc, Posc{
 
     @Override
     public void update(){
+        this.healthBalanceMean.add((this.health - this.lastHealth + (this.shield - this.lastShield)) / Time.delta);
         UnityUnitType type = (UnityUnitType)this.type;
         if(dead || health < 0f){
             if(!net.client() || isLocal()) rotation += type.fallRotateSpeed * Mathf.signs[id % 2] * Time.delta;

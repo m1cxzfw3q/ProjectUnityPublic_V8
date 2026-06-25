@@ -75,6 +75,11 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
 
     public transient float statHp = 0;
 
+    @Import float shield;
+    protected transient float lastHealth;
+    protected transient float lastHealthChanged;
+    protected transient float lastShield;
+
     //MDTX
     @Import Seq<StatusEntry> statuses;
     public Seq<StatusEntry> statuses() {
@@ -244,6 +249,7 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
 
     @Override
     public void update(){
+        this.healthBalanceMean.add((this.health - this.lastHealth + (this.shield - this.lastShield)) / Time.delta);
         if(construct != null && constructdata == null){
             Log.info("uh constructdata died");
             var compdata = construct.getCompressedData();
