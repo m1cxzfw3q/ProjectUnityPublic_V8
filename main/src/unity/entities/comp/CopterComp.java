@@ -10,6 +10,7 @@ import unity.annotations.Annotations.*;
 import unity.entities.*;
 import unity.entities.Rotor.*;
 import unity.type.*;
+import unity.util.ReflectUtils;
 
 import static mindustry.Vars.*;
 
@@ -29,9 +30,24 @@ abstract class CopterComp implements Unitc, Posc{
     @Import int id;
 
     @Import float shield;
-    protected transient float lastHealth;
+    protected transient float lastHealth = 0;
     protected transient float lastHealthChanged;
-    protected transient float lastShield;
+    protected transient float lastShield = 0;
+
+    public void healthChanged() {
+        if (this.lastHealthChanged != 0.0F) {
+            float delta = this.lastHealthChanged - this.health;
+            if (delta != 0.0F) {
+                try{
+                    Class<?> event = ReflectUtils.findClass("mindustryX.events.HealthChangedEvent");
+                    Reflect.invoke(event, "fire", Seq.with(this, delta).toArray(), Unit.class, float.class);
+                } catch (Exception ignored) {}
+
+            }
+        }
+
+        this.lastHealthChanged = this.health;
+    }
 
     //MDTX
     @Import Seq<StatusEntry> statuses;
@@ -60,6 +76,8 @@ abstract class CopterComp implements Unitc, Posc{
     @Override
     public void update(){
         this.healthBalanceMean.add((this.health - this.lastHealth + (this.shield - this.lastShield)) / Time.delta);
+        this.lastHealth = this.health;
+        this.lastShield = this.shield;
         UnityUnitType type = (UnityUnitType)this.type;
         if(dead || health < 0f){
             if(!net.client() || isLocal()) rotation += type.fallRotateSpeed * Mathf.signs[id % 2] * Time.delta;
