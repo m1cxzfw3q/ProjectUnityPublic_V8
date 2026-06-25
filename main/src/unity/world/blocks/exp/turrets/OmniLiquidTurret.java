@@ -64,6 +64,7 @@ public class OmniLiquidTurret extends ExpTurret {
             table.row();
 
             for(Liquid t : content.liquids()){
+                if (t.gas) return;
                 boolean compact = indent > 0;
 
                 table.image(t.uiIcon).size(3 * 8).padRight(4).right().top();
@@ -179,7 +180,7 @@ public class OmniLiquidTurret extends ExpTurret {
 
         @Override
         public boolean acceptLiquid(Building source, Liquid liquid){
-            if(!hasLiquids) return false;
+            if(!hasLiquids || liquid.gas) return false;
             return liquids.current() == liquid || liquids.currentAmount() < 0.2f;
         }
 
