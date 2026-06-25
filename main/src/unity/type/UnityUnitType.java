@@ -122,50 +122,53 @@ public class UnityUnitType extends UnitType{
         applyColor(unit);
 
         RotorMount[] rotors = unit.rotors();
-        for(RotorMount mount : rotors){
-            Rotor rotor = mount.rotor;
-            float x = unit.x + Angles.trnsx(unit.rotation - 90f, rotor.x, rotor.y);
-            float y = unit.y + Angles.trnsy(unit.rotation - 90f, rotor.x, rotor.y);
 
-            float alpha = Mathf.curve(unit.rotorSpeedScl(), 0.2f, 1f);
-            Draw.color(0f, 0f, 0f, rotor.shadowAlpha);
-            float rad = 1.2f;
-            float size = Math.max(rotor.bladeRegion.width, rotor.bladeRegion.height) * Draw.scl;
+        if (rotors != null){
+            for (RotorMount mount : rotors) {
+                Rotor rotor = mount.rotor;
+                float x = unit.x + Angles.trnsx(unit.rotation - 90f, rotor.x, rotor.y);
+                float y = unit.y + Angles.trnsy(unit.rotation - 90f, rotor.x, rotor.y);
 
-            Draw.rect(softShadowRegion, x, y, size * rad * Draw.xscl, size * rad * Draw.yscl);
+                float alpha = Mathf.curve(unit.rotorSpeedScl(), 0.2f, 1f);
+                Draw.color(0f, 0f, 0f, rotor.shadowAlpha);
+                float rad = 1.2f;
+                float size = Math.max(rotor.bladeRegion.width, rotor.bladeRegion.height) * Draw.scl;
 
-            Draw.color();
-            Draw.alpha(alpha * rotor.ghostAlpha);
+                Draw.rect(softShadowRegion, x, y, size * rad * Draw.xscl, size * rad * Draw.yscl);
 
-            Draw.rect(rotor.bladeGhostRegion, x, y, mount.rotorRot);
-            Draw.rect(rotor.bladeShadeRegion, x, y, mount.rotorShadeRot);
+                Draw.color();
+                Draw.alpha(alpha * rotor.ghostAlpha);
 
-            Draw.alpha(1f - alpha * rotor.bladeFade);
-            for(int j = 0; j < rotor.bladeCount; j++){
-                Draw.rect(rotor.bladeOutlineRegion, x, y,
-                    unit.rotation - 90f
-                    + 360f / rotor.bladeCount * j
-                    + mount.rotorRot
-                );
-            }
-        }
+                Draw.rect(rotor.bladeGhostRegion, x, y, mount.rotorRot);
+                Draw.rect(rotor.bladeShadeRegion, x, y, mount.rotorShadeRot);
 
-        for(RotorMount mount : rotors){
-            Rotor rotor = mount.rotor;
-            float x = unit.x + Angles.trnsx(unit.rotation - 90f, rotor.x, rotor.y);
-            float y = unit.y + Angles.trnsy(unit.rotation - 90f, rotor.x, rotor.y);
-
-            Draw.alpha(1f - Mathf.curve(unit.rotorSpeedScl(), 0.2f, 1f) * rotor.bladeFade);
-            for(int j = 0; j < rotor.bladeCount; j++){
-                Draw.rect(rotor.bladeRegion, x, y,
-                    unit.rotation - 90f
-                    + 360f / rotor.bladeCount * j
-                    + mount.rotorRot
-                );
+                Draw.alpha(1f - alpha * rotor.bladeFade);
+                for (int j = 0; j < rotor.bladeCount; j++) {
+                    Draw.rect(rotor.bladeOutlineRegion, x, y,
+                            unit.rotation - 90f
+                                    + 360f / rotor.bladeCount * j
+                                    + mount.rotorRot
+                    );
+                }
             }
 
-            Draw.color();
-            Draw.rect(rotor.topRegion, x, y, unit.rotation - 90f);
+            for (RotorMount mount : rotors) {
+                Rotor rotor = mount.rotor;
+                float x = unit.x + Angles.trnsx(unit.rotation - 90f, rotor.x, rotor.y);
+                float y = unit.y + Angles.trnsy(unit.rotation - 90f, rotor.x, rotor.y);
+
+                Draw.alpha(1f - Mathf.curve(unit.rotorSpeedScl(), 0.2f, 1f) * rotor.bladeFade);
+                for (int j = 0; j < rotor.bladeCount; j++) {
+                    Draw.rect(rotor.bladeRegion, x, y,
+                            unit.rotation - 90f
+                                    + 360f / rotor.bladeCount * j
+                                    + mount.rotorRot
+                    );
+                }
+
+                Draw.color();
+                Draw.rect(rotor.topRegion, x, y, unit.rotation - 90f);
+            }
         }
 
         Draw.reset();
