@@ -423,6 +423,15 @@ public class UnityParts{
             }});
         }};
 
+        pretender = new ModularUnitAbilityType("pretender") {{
+            requirements(PartCategories.specialUnit, ItemStack.with(Items.sporePod, 20));
+            health(10);
+            mass(80);
+            usesPower(15, 0.5f, 1);
+            w = 1;
+            h = 1;
+            ability(1, new SuspiciousAbility());
+        }};
 
         //endregion
     }
