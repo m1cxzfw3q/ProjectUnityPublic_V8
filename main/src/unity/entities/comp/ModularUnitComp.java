@@ -75,9 +75,15 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
 
     public transient float statHp = 0;
 
+    //MDTX
     @Import Seq<StatusEntry> statuses;
     public Seq<StatusEntry> statuses() {
         return statuses;
+    }
+
+    protected transient WindowedMean healthBalanceMean = new WindowedMean(120);
+    public float healthBalance() {
+        return this.healthBalanceMean.mean();
     }
 
     @Override

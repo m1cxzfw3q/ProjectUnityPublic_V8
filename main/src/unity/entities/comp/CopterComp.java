@@ -28,9 +28,15 @@ abstract class CopterComp implements Unitc, Posc{
     @Import float health, rotation;
     @Import int id;
 
+    //MDTX
     @Import Seq<StatusEntry> statuses;
     public Seq<StatusEntry> statuses() {
         return statuses;
+    }
+
+    protected transient WindowedMean healthBalanceMean = new WindowedMean(120);
+    public float healthBalance() {
+        return this.healthBalanceMean.mean();
     }
 
     @Override
