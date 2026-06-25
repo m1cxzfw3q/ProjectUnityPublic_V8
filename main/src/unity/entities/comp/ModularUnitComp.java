@@ -87,9 +87,10 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
             if (delta != 0.0F) {
                 try{
                     Class<?> event = ReflectUtils.findClass("mindustryX.events.HealthChangedEvent");
-                    Reflect.invoke(event, "fire", Seq.with(this, delta).toArray(), Unit.class, float.class);
-                } catch (Exception ignored) {}
-
+                    Reflect.invoke(event, "fire", Seq.with(this, delta).toArray(), Healthc.class, float.class);
+                } catch (Exception e) {
+                    Log.info(e);
+                }
             }
         }
 
