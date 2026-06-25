@@ -3,6 +3,7 @@ package unity.entities.comp;
 import arc.math.*;
 import arc.struct.Seq;
 import arc.util.*;
+import mindustry.content.Fx;
 import mindustry.entities.units.StatusEntry;
 import mindustry.gen.*;
 import mindustry.type.*;
@@ -26,7 +27,7 @@ abstract class CopterComp implements Unitc, Posc{
 
     @Import UnitType type;
     @Import boolean dead;
-    @Import float health, rotation;
+    @Import float health, rotation, maxHealth, shieldAlpha;
     @Import int id;
 
     @Import float shield;
@@ -47,6 +48,18 @@ abstract class CopterComp implements Unitc, Posc{
         }
 
         this.lastHealthChanged = this.health;
+    }
+
+    @Override
+    public void clampHealth() {
+        this.healthChanged();
+    }
+
+    @Override
+    public void rawDamage(float amount) {
+        if (amount > 0.0F && this.type.killable) {
+            this.healthChanged();
+        }
     }
 
     //MDTX

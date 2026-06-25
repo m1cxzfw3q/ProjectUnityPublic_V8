@@ -7,6 +7,7 @@ import arc.struct.*;
 import arc.util.*;
 import arc.util.io.*;
 import mindustry.*;
+import mindustry.content.Fx;
 import mindustry.entities.abilities.*;
 import mindustry.entities.units.*;
 import mindustry.game.EventType.*;
@@ -75,7 +76,7 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
 
     public transient float statHp = 0;
 
-    @Import float shield;
+    @Import float shield, shieldAlpha;
     protected transient float lastHealth = 0;
     protected transient float lastHealthChanged;
     protected transient float lastShield = 0;
@@ -93,6 +94,18 @@ abstract class ModularUnitComp implements Unitc, ElevationMovec, Posc{
         }
 
         this.lastHealthChanged = this.health;
+    }
+
+    @Override
+    public void clampHealth() {
+        this.healthChanged();
+    }
+
+    @Override
+    public void rawDamage(float amount) {
+        if (amount > 0.0F && this.type.killable) {
+            this.healthChanged();
+        }
     }
 
     //MDTX
