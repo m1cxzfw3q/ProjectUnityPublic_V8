@@ -133,6 +133,6 @@ allprojects{
 
     tasks.withType(Javadoc){
         options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('-release', '16')
+        options.addStringOption('-release', '17')
     }
 }
