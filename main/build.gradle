@@ -10,7 +10,7 @@ sourceSets.main{
     ]
 }
 
-sourceCompatibility = 16
+sourceCompatibility = 17
 targetCompatibility = 8
 
 dependencies{
