@@ -4,30 +4,30 @@ buildscript{
         classpath "Anuken:jabel:$jabelVersion"
     }
 
-    repositories{
-        mavenCentral()
+repositories{
+    mavenCentral()
 
-        //Downloads the server-release JAR file from Mindustry releases; does not use any real repository. Surprisingly, this is the most reliable option.
-        ivy{
-            url 'https://github.com/'
-            patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/dependencies.jar'}
-            metadataSources{ artifact() }
-        }
-
-        //"Latest" option to depend on BE builds.
-        ivy{
-            url 'https://github.com/'
-            patternLayout{artifact '/[organisation]/[module]/releases/download/master/[revision].jar'}
-            metadataSources{ artifact() }
-        }
-
-        //Do the same with jabel
-        ivy{
-            url 'https://github.com/'
-            patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/jabel.jar'}
-            metadataSources{ artifact() }
-        }
+    //Downloads the dependencies JAR file from Mindustry releases; does not use any real repository. Surprisingly, this is the most reliable option.
+    ivy{
+        url = 'https://github.com/'
+        patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/dependencies.jar'}
+        metadataSources{ artifact() }
     }
+
+    //If the version is set to 'latest', downloads the latest Mindustry *release* as a dependency
+    ivy{
+        url = 'https://github.com/'
+        patternLayout{artifact '/[organisation]/[module]/releases/[revision]/download/dependencies.jar'}
+        metadataSources{ artifact() }
+    }
+
+    //For depending on the absolute newest commit for Mindustry
+    ivy{
+        url = 'https://github.com/'
+        patternLayout{artifact '/[organisation]/[module]/releases/download/master/[revision].jar'}
+        metadataSources{ artifact() }
+    }
+}
 }
 
 allprojects{
