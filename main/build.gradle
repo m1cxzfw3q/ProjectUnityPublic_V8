@@ -11,7 +11,7 @@ sourceSets.main{
 }
 
 sourceCompatibility = 17
-targetCompatibility = 8
+targetCompatibility = 17
 
 dependencies{
     compileOnly "Anuken:Mindustry:$mindustryVersion"
@@ -222,7 +222,7 @@ tasks.withType(JavaCompile){
         }
     }
 
-    options.compilerArgs += ['--release', '8']
+    options.compilerArgs += ['--release', '17']
 }
 
 tasks.withType(Jar){
