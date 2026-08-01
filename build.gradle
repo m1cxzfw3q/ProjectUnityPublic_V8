@@ -27,6 +27,13 @@ repositories{
         patternLayout{artifact '/[organisation]/[module]/releases/download/master/[revision].jar'}
         metadataSources{ artifact() }
     }
+
+    //Do the same with jabel
+    ivy{
+        url 'https://github.com/'
+        patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/jabel.jar'}
+        metadataSources{ artifact() }
+    }
 }
 }
 
