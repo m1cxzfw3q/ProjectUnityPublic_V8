@@ -10,25 +10,23 @@ repositories{
     //Downloads the dependencies JAR file from Mindustry releases; does not use any real repository. Surprisingly, this is the most reliable option.
     ivy{
         url = 'https://github.com/'
-        patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/dependencies.jar'}
+        patternLayout{ artifact(
+            (mindustryVersion == "latest" ? '/[organisation]/[module]/releases/[revision]/download/dependencies.jar' : //latest stable release
+            mindustryVersion == "be" ? '/[organisation]/[module]/releases/download/master/[revision].jar' : //latest commit (BE)
+            '/[organisation]/[module]/releases/download/[revision]/dependencies.jar')) //specific release
+        }
         metadataSources{ artifact() }
+
+        content{
+            if(mindustryVersion == "be"){
+                //BE artifact version is always 'latest'
+                includeVersion("Anuken", "MindustryBuilds", "latest")
+            }else{
+                includeVersion("Anuken", "Mindustry", mindustryVersion)
+            }
+        }
     }
 
-    //If the version is set to 'latest', downloads the latest Mindustry *release* as a dependency
-    ivy{
-        url = 'https://github.com/'
-        patternLayout{artifact '/[organisation]/[module]/releases/[revision]/download/dependencies.jar'}
-        metadataSources{ artifact() }
-    }
-
-    //For depending on the absolute newest commit for Mindustry
-    ivy{
-        url = 'https://github.com/'
-        patternLayout{artifact '/[organisation]/[module]/releases/download/master/[revision].jar'}
-        metadataSources{ artifact() }
-    }
-
-    //Do the same with jabel
     ivy{
         url 'https://github.com/'
         patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/jabel.jar'}
@@ -67,30 +65,34 @@ allprojects{
     }
 
     repositories{
-        mavenCentral()
+    mavenCentral()
 
-        //Downloads the server-release JAR file from Mindustry releases; does not use any real repository. Surprisingly, this is the most reliable option.
-        ivy{
-            url 'https://github.com/'
-            patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/dependencies.jar'}
-            metadataSources{ artifact() }
+    //Downloads the dependencies JAR file from Mindustry releases; does not use any real repository. Surprisingly, this is the most reliable option.
+    ivy{
+        url = 'https://github.com/'
+        patternLayout{ artifact(
+            (mindustryVersion == "latest" ? '/[organisation]/[module]/releases/[revision]/download/dependencies.jar' : //latest stable release
+            mindustryVersion == "be" ? '/[organisation]/[module]/releases/download/master/[revision].jar' : //latest commit (BE)
+            '/[organisation]/[module]/releases/download/[revision]/dependencies.jar')) //specific release
         }
+        metadataSources{ artifact() }
 
-        //"Latest" option to depend on BE builds.
-        ivy{
-            url 'https://github.com/'
-            patternLayout{artifact '/[organisation]/[module]/releases/download/master/[revision].jar'}
-            metadataSources{ artifact() }
-        }
-
-        //Do the same with jabel
-        ivy{
-            url 'https://github.com/'
-            patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/jabel.jar'}
-            metadataSources{ artifact() }
+        content{
+            if(mindustryVersion == "be"){
+                //BE artifact version is always 'latest'
+                includeVersion("Anuken", "MindustryBuilds", "latest")
+            }else{
+                includeVersion("Anuken", "Mindustry", mindustryVersion)
+            }
         }
     }
 
+    ivy{
+        url 'https://github.com/'
+        patternLayout{artifact '/[organisation]/[module]/releases/download/[revision]/jabel.jar'}
+        metadataSources{ artifact() }
+    }
+    }
     task sourcesJar(type: Jar, dependsOn: classes){
         archiveClassifier.set 'sources'
         from sourceSets.main.allSource
