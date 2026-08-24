@@ -10,8 +10,8 @@ sourceSets.main{
     ]
 }
 
-sourceCompatibility = 16
-targetCompatibility = 8
+//sourceCompatibility = 16
+//targetCompatibility = 8
 
 dependencies{
     compileOnly "Anuken:Mindustry:$mindustryVersion"

@@ -59,6 +59,8 @@ public class ExpTurret extends Turret {
     //optional drawer
     public @Nullable DrawLevel draw = null;
 
+    protected static Func<Building, Bar> healthBar;
+
     public ExpTurret(String name){
         super(name);
     }
@@ -170,6 +172,7 @@ public class ExpTurret extends Turret {
     @Override
     public void setBars(){
         super.setBars();
+        healthBar = barMap.get("health");
         removeBar("health");
     }
 
@@ -429,7 +432,7 @@ public class ExpTurret extends Turret {
             else t.update(() -> {
                 if(level() != l) buildHBar(t);
             });
-            t.add(new Bar("stat.health", Pal.health, this::healthf).blink(Color.white)).growX();
+            t.add(healthBar.get(this)).growX();
         }
 
         @Override

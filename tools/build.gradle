@@ -86,10 +86,10 @@ task proc(dependsOn: [classes, configurations.runtimeClasspath]){
             into spritesDir
         }
 
-        javaexec{
-            workingDir = assetsDir
-            main = 'unity.tools.Tools'
-            classpath = sourceSets.main.runtimeClasspath
-        }
+        //javaexec{
+        //    workingDir = assetsDir
+        //    main = 'unity.tools.Tools'
+        //    classpath = sourceSets.main.runtimeClasspath
+        //}
     }
 }
