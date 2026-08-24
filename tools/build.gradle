@@ -33,6 +33,8 @@ task rearchive{
     final def listStr = file(assetsDir).list()
 
     task archDexed(type: Jar){
+        dependsOn 'main:dex'
+
         if(!dexedJar.exists() || taskNames.contains('main:dex')) ':main:dex'
 
         archiveFileName.set dexedJar.getName()
