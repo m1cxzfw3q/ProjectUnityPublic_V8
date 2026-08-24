@@ -41,6 +41,8 @@ import arc.util.serialization.*
 import java.util.concurrent.*
 
 task deploy(type: Jar, dependsOn: configurations.runtimeClasspath){
+    dependsOn processResources
+
     if(!spritesDir.exists()){
         finalizedBy ':tools:proc'
         if(taskNames.contains('main:deploy')) println 'Sprites folder not found; automatically generating sprites...'
