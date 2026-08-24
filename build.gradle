@@ -1,8 +1,8 @@
 buildscript{
-    //dependencies{
-        //classpath "Anuken:Mindustry:$mindustryVersion"
-        //classpath "Anuken:jabel:$jabelVersion"
-    //}
+    dependencies{
+        classpath "Anuken:Mindustry:$mindustryVersion"
+        classpath "Anuken:jabel:$jabelVersion"
+    }
 
 repositories{
     mavenCentral()
